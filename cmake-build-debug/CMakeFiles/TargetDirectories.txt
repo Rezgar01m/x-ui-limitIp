@@ -1,0 +1,3 @@
+G:/c++/limitIp/cmake-build-debug/CMakeFiles/limitIp.dir
+G:/c++/limitIp/cmake-build-debug/CMakeFiles/edit_cache.dir
+G:/c++/limitIp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
