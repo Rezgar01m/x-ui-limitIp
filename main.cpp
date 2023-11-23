@@ -7,8 +7,8 @@
 using namespace std;
 
 class limit{
-    map<std::string > ban;
     map<std::string , std::string> map;
+    std::map<std::string, std::string> ban;
     void writeFile(string& in){
         ofstream file("out.limit");
         file<< in << std::endl;
@@ -42,13 +42,22 @@ public:
                 if (map[client] != ip){
                     cout << client;
                     out_txt+= client;
-                    writeFile(out_txt);
+                    ban[client] = ip;
+                    if (isThere(client)) {
+                        writeFile(out_txt);
+                    }
                 }
             } else {
                 map[client] = ip;
             }
         }
 
+    }
+    bool isThere(std::string& cl){
+        if (ban.count(cl) > 0) {
+            return true;
+        }
+        return false;
     }
 };
 
@@ -68,8 +77,9 @@ void readf(int i){
 }
 int main() {
     long int i =0;
+    int time = 59;
     while (true){
-        std::this_thread::sleep_for(std::chrono::seconds(59));
+        std::this_thread::sleep_for(std::chrono::seconds(time));
         std::cout << "bgm" << i << std::endl ;
         i++;
         readf(i);
@@ -78,3 +88,4 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }
+// 
