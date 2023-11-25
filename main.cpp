@@ -5,12 +5,15 @@
 #include "regex"
 
 using namespace std;
-
+std::string accesFile = "G:\\access.log";
+std::string outResult="out.limit";
 class limit{
     map<std::string , std::string> map;
     std::map<std::string, std::string> ban;
+
+
     void writeFile(string& in){
-        ofstream file("out.limit");
+        ofstream file(outResult);
         file<< in << std::endl;
         file.close();
     }
@@ -63,7 +66,7 @@ public:
 
 void readf(int i){
     limit limit ;
-    std::fstream fstream("G:\\access.log");
+    std::fstream fstream(accesFile);
     string l;
     if (i ==500){
         limit.out_txt ="";
