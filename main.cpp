@@ -6,6 +6,7 @@
 
 using namespace std;
 std::string accesFile = "G:\\access.log";
+// output file
 std::string outResult="out.limit";
 class limit{
     map<std::string , std::string> map;
