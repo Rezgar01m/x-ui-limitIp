@@ -8,7 +8,7 @@ using namespace std;
 std::string xuiPath = "/usr/local/x-ui";
 std::string accesFile = xuiPath+"/access.log";
 // output file
-std::string outResult="out.limit";
+std::string outResult=xuiPath+"out.limit";
 class limit{
     map<std::string , std::string> map;
     std::map<std::string, std::string> ban;
