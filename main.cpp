@@ -3,9 +3,10 @@
 #include "thread"
 #include "fstream"
 #include "regex"
-
 using namespace std;
-std::string accesFile = "G:\\access.log";
+ // std::string accesFile = "G:\\access.log";
+std::string xuiPath = "/usr/local/x-ui";
+std::string accesFile = xuiPath+"/access.log";
 // output file
 std::string outResult="out.limit";
 class limit{
@@ -20,7 +21,7 @@ class limit{
     }
 
 public:
-    std::string out_txt="";
+    std::string out_txt=xuiPath+"";
     void run(const std::string& in) {
 
         //  std::string text = "2023/11/21 15:39:21 5.122.150.179:6261 accepted udp:1.1.1.1:53 email: shahab";
@@ -69,7 +70,7 @@ void readf(int i){
     limit limit ;
     std::fstream fstream(accesFile);
     string l;
-    if (i ==500){
+    if (i ==600){
         limit.out_txt ="";
     }
     if (fstream.is_open()){
@@ -88,7 +89,6 @@ int main() {
         i++;
         readf(i);
     }
-
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }
