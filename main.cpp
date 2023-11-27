@@ -80,15 +80,20 @@ void readf(int i){
     }
     fstream.close();
 }
-int main() {
+void lim(){
     long int i =0;
     int time = 59;
+    std::thread thread(readf,2);
+
     while (true){
         std::this_thread::sleep_for(std::chrono::seconds(time));
         std::cout << "bgm" << i << std::endl ;
         i++;
         readf(i);
     }
+}
+int main() {
+
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }
