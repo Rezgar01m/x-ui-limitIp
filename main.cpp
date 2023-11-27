@@ -93,7 +93,7 @@ void lim(){
     }
 }
 int main() {
-    std::thread thread(lim);
+    lim();
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }
