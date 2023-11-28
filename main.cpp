@@ -121,7 +121,9 @@ void lim(){
     }
 
 }
+
 int main() {
+
     std::ofstream outputFile("output.log");
 
 
@@ -144,4 +146,4 @@ int main() {
 
     return 0;
 }
-// 
+// plz follow me ,if u have any ideas send me message to my email
