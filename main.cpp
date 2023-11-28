@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unistd.h>
 #include "chrono"
 #include "thread"
 #include "fstream"
@@ -81,6 +82,7 @@ void readf(int i){
     fstream.close();
 }
 void lim(){
+    std::cout << "bgm";
     long int i =0;
     int time = 59;
     std::thread thread(readf,2);
@@ -93,8 +95,24 @@ void lim(){
     }
 }
 int main() {
+    std::ofstream outputFile("output.log");
+
+
+    std::streambuf* coutBuffer = std::cout.rdbuf();
+    std::cout.rdbuf(outputFile.rdbuf());
+
+
+    std::cout << "Program started" << std::endl;
+
+
+    sleep(10);
+    std::cout << "Program finished." << std::endl;
+
+
     lim();
     std::cout << "Hello, World!" << std::endl;
+    std::cout.rdbuf(coutBuffer);
+    outputFile.close();
     return 0;
 }
 // 
